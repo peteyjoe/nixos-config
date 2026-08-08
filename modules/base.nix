@@ -30,5 +30,7 @@
     smartmontools
     parted
     git
+    sops
+    age
   ];
 }
