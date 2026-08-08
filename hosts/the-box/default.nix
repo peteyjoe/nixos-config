@@ -14,6 +14,7 @@
       ../../modules/services/caddy.nix
       ../../modules/services/ssh.nix
       ../../modules/services/samba.nix
+      ../../modules/services/vaultwarden.nix
     ];
 
   networking.hostName = "the-box";
