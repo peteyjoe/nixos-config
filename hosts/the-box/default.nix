@@ -11,6 +11,7 @@
       ../../modules/storage.nix
       ../../modules/users.nix
 
+      ../../modules/services/caddy.nix
       ../../modules/services/ssh.nix
       ../../modules/services/samba.nix
     ];
