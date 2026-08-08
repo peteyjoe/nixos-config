@@ -27,6 +27,15 @@
     '';
 
     virtualHosts = {
+      # To get wildcard cert
+      "*.thisismy.casa".extraConfig = ''
+        abort
+      '';
+
+      "thisismy.casa".extraConfig = ''
+        respond "the-box"
+      '';
+
       "test.thisismy.casa".extraConfig = ''
         respond "It works!"
       '';
