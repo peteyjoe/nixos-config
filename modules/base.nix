@@ -24,11 +24,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   environment.systemPackages = with pkgs; [
     vim
     btrfs-progs

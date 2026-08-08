@@ -7,9 +7,10 @@
 
       ../../modules/base.nix
       ../../modules/networking.nix
-      ../../modules/ssh.nix
       ../../modules/storage.nix
       ../../modules/users.nix
+
+      ../../modules/services/ssh.nix
     ];
 
   networking.hostName = "the-box";
