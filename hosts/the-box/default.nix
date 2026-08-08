@@ -11,6 +11,7 @@
       ../../modules/users.nix
 
       ../../modules/services/ssh.nix
+      ../../modules/services/samba.nix
     ];
 
   networking.hostName = "the-box";
