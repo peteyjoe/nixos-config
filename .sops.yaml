@@ -1,0 +1,8 @@
+keys:
+   - &the-box age1agdz5qn0cs7d52xshvxg3228scc6zdx2488j2fzuq6wr647zfsuqw2gujm
+
+creation_rules:
+  - path_regex: secrets/the-box\.yaml$
+    key_groups:
+      - age:
+          - *the-box
