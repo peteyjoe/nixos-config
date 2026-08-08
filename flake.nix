@@ -7,17 +7,17 @@
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
   };
 
-  outputs = { self, nixpkgs, ... }: {
+  outputs = { self, nixpkgs, sops-nix, ... }: {
     nixosConfigurations = {
       the-box = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         modules = [
-          sops-nix.nixosModules.sops
           ./hosts/the-box
+          sops-nix.nixosModules.sops
         ];
       };
     };
