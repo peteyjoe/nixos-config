@@ -15,6 +15,13 @@
 
     address = "i2p.thisismy.casa";
 
+    addressbook.subscriptions = [
+      "http://inr.i2p/export/alive-hosts.txt"
+      "http://i2p-projekt.i2p/hosts.txt"
+      "http://stats.i2p/cgi-bin/newhosts.txt"
+      "http://reg.i2p/export/hosts.txt"
+    ];
+
     ntcp2 = {
       enable = true;
       published = true;
