@@ -41,10 +41,6 @@
     networks."20-wg0" = {
       matchConfig.Name = "wg0";
 
-      networkConfig = {
-        IPv4Forwarding = true;
-      };
-
       address = [
         "10.69.69.1/24"
       ];

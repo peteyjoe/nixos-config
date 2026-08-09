@@ -8,13 +8,16 @@
   systemd.network = {
     enable = true;
 
+    config.networkConfig = {
+      IPv4Forwarding = true;
+    };
+
     networks."10-lan" = {
       matchConfig.Name = "eno1";
 
       networkConfig = {
         DHCP = "yes";
         IPv6AcceptRA = true;
-        IPv4Forwarding = true;
       };
 
       addresses = [
