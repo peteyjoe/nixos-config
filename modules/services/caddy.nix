@@ -33,7 +33,7 @@
       '';
 
       "thisismy.casa".extraConfig = ''
-        respond "the-box"
+        respond "Welcome to my house"
       '';
 
       "test.thisismy.casa".extraConfig = ''
