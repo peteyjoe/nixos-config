@@ -14,7 +14,7 @@
       networkConfig = {
         DHCP = "yes";
         IPv6AcceptRA = true;
-        IPForward = "ipv4";
+        IPv4Forwarding = true;
       };
 
       addresses = [
