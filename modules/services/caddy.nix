@@ -1,13 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  sops.secrets.cloudflare-api-token = {
+  sops.secrets.cloudflare-caddy-api-token = {
     sopsFile = ../../secrets/the-box.yaml;
   };
 
   sops.templates."caddy-env" = {
     content = ''
-      CLOUDFLARE_API_TOKEN=${config.sops.placeholder.cloudflare-api-token}
+      CLOUDFLARE_API_TOKEN=${config.sops.placeholder.cloudflare-caddy-api-token}
     '';
     owner = "caddy";
   };
