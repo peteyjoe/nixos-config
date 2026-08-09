@@ -1,27 +1,26 @@
 { ... }:
 
 {
-  networking.networkmanager = {
+  networking.networkmanager.enable = false;
+
+  networking.useNetworkd = true;
+
+  systemd.network = {
     enable = true;
-    
-    ensureProfiles.profiles = {
-      lan = {
-        connection = {
-          id = "lan";
-          type = "ethernet";
-          interface-name = "eno1";
-          autoconnect = true;
-        };
 
-        ipv4 = {
-          method = "auto";
-        };
+    networks."10-lan" = {
+      matchConfig.Name = "eno1";
 
-        ipv6 = {
-          method = "auto";
-          address1 = "fd69:dead:beef:1::10/64";
-        };
+      networkConfig = {
+        DHCP = "yes";
+        IPv6AcceptRA = true;
       };
+
+      addresses = [
+        {
+          Address = "fd69:dead:beef:1::10/64";
+        }
+      ];
     };
   };
 }
