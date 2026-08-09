@@ -13,7 +13,7 @@
     bandwidth = 4096; # KiB/s
     share = 80; # %
 
-    address = "vpn.thisismy.casa";
+    address = "i2p.thisismy.casa";
 
     ntcp2 = {
       enable = true;
