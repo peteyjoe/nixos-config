@@ -10,7 +10,8 @@
     port = 31337;
     nat = true;
     notransit = false;
-    bandwidth = 4096; # KiB/s
+    floodfill = true;
+    bandwidth = 1024; # KiB/s
     share = 80; # %
 
     address = "i2p.thisismy.casa";
