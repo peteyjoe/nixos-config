@@ -13,6 +13,8 @@
     bandwidth = 4096; # KiB/s
     share = 80; # %
 
+    address = "vpn.thisismy.casa";
+
     ntcp2 = {
       enable = true;
       published = true;
