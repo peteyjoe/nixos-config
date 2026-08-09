@@ -33,5 +33,6 @@
     sops
     age
     htop
+    bandwhich
   ];
 }
