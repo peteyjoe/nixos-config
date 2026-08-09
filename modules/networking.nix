@@ -20,6 +20,10 @@
         IPv6AcceptRA = true;
       };
 
+      ipv6AcceptRAConfig = {
+        Token = "::1108";
+      };
+
       addresses = [
         {
           Address = "fd69:dead:beef:1::10/64";
