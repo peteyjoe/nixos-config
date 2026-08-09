@@ -112,6 +112,12 @@
     options = [ "subvol=@databases" "compress=zstd:1" "noatime" "discard=async" ];
   };
 
+  fileSystems."/srv/apps/monero" = {
+    device = "/dev/disk/by-uuid/3f6692c1-4cad-4fce-a5c8-dc5ca4c8e45a";
+    fsType = "btrfs";
+    options = [ "subvol=@monero" "compress=zstd:1" "noatime" "discard=async" ];
+  };
+
   fileSystems."/srv/apps/.snapshots" = {
     device = "/dev/disk/by-uuid/3f6692c1-4cad-4fce-a5c8-dc5ca4c8e45a";
     fsType = "btrfs";

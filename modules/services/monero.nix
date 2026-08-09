@@ -4,7 +4,7 @@
   services.monero = {
     enable = true;
 
-    dataDir = "/srv/apps/appdata/monero";
+    dataDir = "/srv/apps/monero";
 
     # Keep the complete blockchain.
     prune = false;
