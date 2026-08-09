@@ -15,6 +15,8 @@
         enable = true;
         address = "127.0.0.1";
         port = 7070;
+        hostname = "i2pd.thisismy.casa";
+        strictHeaders = true;
       };
 
       httpProxy = {
@@ -25,12 +27,6 @@
 
       socksProxy.enable = false;
     };
-
-    extraConfig = ''
-        [http]
-        hostname = i2pd.thisismy.casa
-        strictheaders = true
-      '';
   };
 
   networking.firewall.allowedTCPPorts = [
