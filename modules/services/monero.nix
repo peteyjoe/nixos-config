@@ -31,6 +31,10 @@
     '';
   };
 
+  systemd.tmpfiles.rules = [
+    "d /srv/apps/monero 0700 monero monero -"
+  ];
+
   networking.firewall.allowedTCPPorts = [
     18080
   ];
