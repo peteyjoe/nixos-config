@@ -17,7 +17,6 @@
       enable = true;
       published = true;
       port = 31337;
-      addressv6 = "2600:8800:1e80:42::1108";
     };
 
     ssu2 = {
