@@ -12,6 +12,7 @@
       ../../modules/users.nix
 
       ../../modules/services/caddy.nix
+      ../../modules/services/ddns-updater.nix
       ../../modules/services/ssh.nix
       ../../modules/services/samba.nix
       ../../modules/services/vaultwarden.nix
