@@ -12,6 +12,13 @@
     mode = "0440";
   };
 
+  sops.secrets.wireguard-iphone-psk = {
+    sopsFile = ../../secrets/the-box.yaml;
+    owner = "root";
+    group = "systemd-network";
+    mode = "0440";
+  };
+
   systemd.network = {
     netdevs."20-wg0" = {
       netdevConfig = {
@@ -31,6 +38,8 @@
         {
           # iPhone
           PublicKey = "d9YqHvg5+mez+hCodeyUKg14eaOZip30ijZTLZXUblI=";
+          PresharedKeyFile =
+            config.sops.secrets.wireguard-iphone-psk.path;
           AllowedIPs = [
             "10.69.69.2/32"
           ];
