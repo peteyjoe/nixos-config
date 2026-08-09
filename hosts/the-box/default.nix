@@ -13,6 +13,7 @@
 
       ../../modules/services/caddy.nix
       ../../modules/services/ddns-updater.nix
+      ../../modules/services/i2pd.nix
       ../../modules/services/monero.nix
       ../../modules/services/ssh.nix
       ../../modules/services/samba.nix
