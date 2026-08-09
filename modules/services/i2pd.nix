@@ -23,9 +23,14 @@
         port = 4444;
       };
 
-      # Leave SOCKS disabled unless you actually need it.
       socksProxy.enable = false;
     };
+
+    extraConfig = ''
+        [http]
+        hostname = i2pd.thisismy.casa
+        strictheaders = true
+      '';
   };
 
   networking.firewall.allowedTCPPorts = [
