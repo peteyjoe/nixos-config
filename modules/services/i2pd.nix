@@ -5,7 +5,7 @@
     enable = true;
 
     enableIPv4 = true;
-    enableIPv6 = true;
+    enableIPv6 = false;
 
     port = 31337;
     nat = true;
