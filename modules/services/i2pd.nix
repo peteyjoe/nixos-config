@@ -13,20 +13,20 @@
     bandwidth = 4096; # KiB/s
     share = 80; # %
 
+    ntcp2 = {
+      enable = true;
+      published = true;
+      port = 31337;
+      addressv6 = "2600:8800:1e80:42::1108";
+    };
+
+    ssu2 = {
+      enable = true;
+      published = true;
+      port = 31337;
+    };
+
     proto = {
-      ntcp2 = {
-        enable = true;
-        published = true;
-        port = 31337;
-        addressv6 = "2600:8800:1e80:42::1108";
-      };
-
-      ssu2 = {
-        enable = true;
-        published = true;
-        port = 31337;
-      };
-
       http = {
         enable = true;
         address = "127.0.0.1";
