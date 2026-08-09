@@ -7,8 +7,11 @@
     enableIPv4 = true;
     enableIPv6 = true;
 
-    # Optional: don't dedicate excessive bandwidth initially.
+    port = 31337;
+    nat = true;
+    notransit = false;
     bandwidth = 4096; # KiB/s
+    share = 80; # %
 
     proto = {
       http = {
@@ -31,6 +34,11 @@
 
   networking.firewall.allowedTCPPorts = [
     4444
+    31337
+  ];
+
+  networking.firewall.allowedUDPPorts = [
+    31337
   ];
 
   services.caddy.virtualHosts."i2pd.thisismy.casa".extraConfig = ''
