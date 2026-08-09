@@ -42,7 +42,7 @@
       matchConfig.Name = "wg0";
 
       networkConfig = {
-        IPForward = true;
+        IPForward = "ipv4";
       };
 
       address = [
