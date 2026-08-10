@@ -5,7 +5,7 @@
     enable = true;
 
     enableIPv4 = true;
-    enableIPv6 = true;
+    enableIPv6 = false;
 
     port = 31337;
     nat = true;
@@ -13,8 +13,6 @@
     floodfill = true;
     bandwidth = 1024; # KiB/s
     share = 80; # %
-
-    address = "i2p.thisismy.casa";
 
     addressbook.subscriptions = [
       "http://inr.i2p/export/alive-hosts.txt"
