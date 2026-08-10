@@ -66,4 +66,6 @@
   services.caddy.virtualHosts."i2pd.thisismy.casa".extraConfig = ''
     reverse_proxy 127.0.0.1:7070
   '';
+
+  systemd.services.i2pd.serviceConfig.LimitNOFILE = "65536:524288";
 }
