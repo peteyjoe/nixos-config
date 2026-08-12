@@ -1,10 +1,22 @@
 { ... }:
 
 {
+  systemd.tmpfiles.rules = [
+    "d /srv/apps/appdata/microbin 0755 root root -"
+  ];
+
+  fileSystems."/var/lib/microbin" = {
+    device = "/srv/apps/appdata/microbin";
+    fsType = "none";
+    options = [
+      "bind"
+      "nofail"
+      "x-systemd.requires-mounts-for=/srv/apps/appdata"
+    ];
+  };
+
   services.microbin = {
     enable = true;
-
-    dataDir = "/srv/apps/appdata/microbin";
 
     settings = {
       MICROBIN_BIND = "127.0.0.1";
