@@ -54,6 +54,18 @@ in
             expanded = true;
           };
         }
+
+        {
+          datetime = {
+            text_size = "xl";
+
+            format = {
+              dateStyle = "short";
+              timeStyle = "short";
+              hour12 = true;
+            };
+          };
+        }
       ];
     };
 
