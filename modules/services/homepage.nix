@@ -44,11 +44,6 @@ in
 
       widgets = [
         {
-          resources = {
-            cpu = true;
-            memory = true;
-            disk = "/";
-          };
           glances = {
             url = "http://127.0.0.1:61208";
             version = 4;
