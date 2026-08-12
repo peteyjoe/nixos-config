@@ -60,7 +60,7 @@ in
             text_size = "xl";
 
             format = {
-              dateStyle = "short";
+              dateStyle = "long";
               timeStyle = "short";
               hour12 = true;
             };
