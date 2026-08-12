@@ -9,6 +9,7 @@
     settings = {
       MICROBIN_BIND = "127.0.0.1";
       MICROBIN_PORT = 49061;
+      MICROBIN_DATA_DIR = "/srv/apps/appdata/microbin";
 
       MICROBIN_PUBLIC_PATH = "https://paste.thisismy.casa";
 
