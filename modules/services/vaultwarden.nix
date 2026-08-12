@@ -29,4 +29,15 @@
   services.caddy.virtualHosts."vault.thisismy.casa".extraConfig = ''
     reverse_proxy 127.0.0.1:8222
   '';
+
+  my.homepage.services.Services = [
+    {
+      Vaultwarden = {
+        icon = "vaultwarden.png";
+        href = "https://vault.thisismy.casa";
+        description = "Password manager";
+        siteMonitor = "https://vault.thisismy.casa";
+      };
+    }
+  ];
 }
