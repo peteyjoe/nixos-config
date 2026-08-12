@@ -47,10 +47,18 @@ in
           glances = {
             url = "http://127.0.0.1:61208";
             version = 4;
+
             cpu = true;
             mem = true;
             cputemp = true;
             uptime = true;
+
+            disk = [
+              "/"
+              "/srv/apps"
+              "/srv/vault"
+            ];
+
             expanded = true;
           };
         }
