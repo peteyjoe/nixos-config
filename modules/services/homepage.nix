@@ -31,13 +31,13 @@ in
 
         layout = {
           Services = {
-            style = "row";
-            columns = 3;
+            header = true;
+            style = "column";
           };
 
           Network = {
-            style = "row";
-            columns = 3;
+            header = true;
+            style = "column";
           };
         };
       };
@@ -68,6 +68,17 @@ in
         }
       ];
     };
+
+    my.homepage.services.Network = [
+      {
+        Router = {
+          icon = "router.png";
+          href = "http://192.168.0.1";
+          description = "FreshTomato";
+          ping = "192.168.0.1";
+        };
+      }
+    ];
 
     services.caddy.virtualHosts."home.thisismy.casa".extraConfig = ''
       reverse_proxy 127.0.0.1:35196

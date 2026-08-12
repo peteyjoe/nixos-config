@@ -38,4 +38,14 @@
   networking.firewall.allowedTCPPorts = [
     18080
   ];
+
+  my.homepage.services.Services = [
+    {
+      "Monero" = {
+        icon = "monero.png";
+        description = "Monero node";
+        siteMonitor = "http://127.0.0.1:18081/get_info";
+      };
+    }
+  ];
 }

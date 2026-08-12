@@ -65,5 +65,16 @@
     reverse_proxy 127.0.0.1:7070
   '';
 
+  my.homepage.services.Services = [
+    {
+      "I2P Router" = {
+        icon = "i2pd.png";
+        href = "https://i2pd.thisismy.casa";
+        description = "i2pd router";
+        siteMonitor = "https://i2pd.thisismy.casa";
+      };
+    }
+  ];
+
   systemd.services.i2pd.serviceConfig.LimitNOFILE = "65536:524288";
 }
