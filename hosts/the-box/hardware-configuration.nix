@@ -56,12 +56,6 @@
     options = [ "subvol=@home" "compress=zstd:3" "noatime" ];
   };
 
-  fileSystems."/swap" = {
-    device = "/dev/disk/by-uuid/e3db1f19-c25b-4d57-97e9-ab1ef72964e7";
-    fsType = "btrfs";
-    options = [ "subvol=@swap" "noatime" ];
-  };
-
   fileSystems."/.snapshots" = {
     device = "/dev/disk/by-uuid/e3db1f19-c25b-4d57-97e9-ab1ef72964e7";
     fsType = "btrfs";
@@ -130,10 +124,7 @@
     options = [ "subvol=@snapshots" "compress=zstd:3" "noatime" "discard=async" ];
   };
 
-  swapDevices = [{
-    device = "/swap/swapfile";
-    size = 32*1024;
-  }];
+  swapDevices = lib.mkForce [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
