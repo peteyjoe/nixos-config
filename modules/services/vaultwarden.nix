@@ -21,13 +21,13 @@
     config = {
       DOMAIN = "https://vault.thisismy.casa";
       ROCKET_ADDRESS = "127.0.0.1";
-      ROCKET_PORT = 8222;
+      ROCKET_PORT = 23588;
       SIGNUPS_ALLOWED = false;
     };
   };
 
   services.caddy.virtualHosts."vault.thisismy.casa".extraConfig = ''
-    reverse_proxy 127.0.0.1:8222
+    reverse_proxy 127.0.0.1:23588
   '';
 
   my.homepage.services.Services = [

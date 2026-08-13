@@ -15,7 +15,7 @@ in
       enable = true;
 
       allowedHosts = "home.thisismy.casa";
-      listenPort = 35196;
+      listenPort = 6995;
 
       services =
         lib.mapAttrsToList
@@ -45,7 +45,7 @@ in
       widgets = [
         {
           glances = {
-            url = "http://127.0.0.1:61208";
+            url = "http://127.0.0.1:29606";
             version = 4;
 
             cpu = true;
@@ -89,7 +89,7 @@ in
     ];
 
     services.caddy.virtualHosts."home.thisismy.casa".extraConfig = ''
-      reverse_proxy 127.0.0.1:35196
+      reverse_proxy 127.0.0.1:6995
     '';
   };
 }

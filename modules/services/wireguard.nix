@@ -31,7 +31,7 @@
           config.sops.secrets.wireguard-private-key.path;
         # Public Key: KakSanqE1qK45AQiAtANWXzMzo3uljW1V8LcMcjREUM=
 
-        ListenPort = 51820;
+        ListenPort = 30164;
       };
 
       wireguardPeers = [
@@ -58,7 +58,7 @@
 
   networking.firewall = {
     allowedUDPPorts = [
-      51820
+      30164
     ];
 
     extraForwardRules = ''

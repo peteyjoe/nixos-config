@@ -37,7 +37,7 @@
       http = {
         enable = true;
         address = "127.0.0.1";
-        port = 7070;
+        port = 15364;
         hostname = "i2pd.thisismy.casa";
         strictHeaders = true;
       };
@@ -62,7 +62,7 @@
   ];
 
   services.caddy.virtualHosts."i2pd.thisismy.casa".extraConfig = ''
-    reverse_proxy 127.0.0.1:7070
+    reverse_proxy 127.0.0.1:15364
   '';
 
   my.homepage.services.Services = [

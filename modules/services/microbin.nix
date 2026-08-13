@@ -20,7 +20,7 @@
 
     settings = {
       MICROBIN_BIND = "127.0.0.1";
-      MICROBIN_PORT = 49061;
+      MICROBIN_PORT = 23777;
 
       MICROBIN_PUBLIC_PATH = "https://paste.thisismy.casa";
 
@@ -33,7 +33,7 @@
   };
 
   services.caddy.virtualHosts."paste.thisismy.casa".extraConfig = ''
-    reverse_proxy 127.0.0.1:49061
+    reverse_proxy 127.0.0.1:23777
   '';
 
   my.homepage.services.Services = [
