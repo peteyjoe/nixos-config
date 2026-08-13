@@ -34,5 +34,6 @@
     age
     htop
     bandwhich
+    fastfetch
   ];
 }
