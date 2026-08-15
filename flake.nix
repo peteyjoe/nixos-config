@@ -8,6 +8,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    inputs.disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, sops-nix, ... }: {
@@ -18,6 +23,15 @@
         modules = [
           ./hosts/the-box
           sops-nix.nixosModules.sops
+        ];
+      };
+
+      casa-vps = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        modules = [
+          ./hosts/casa-vps
+          disko.nixosModules.disko
         ];
       };
     };
