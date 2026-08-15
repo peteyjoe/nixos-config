@@ -9,13 +9,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    inputs.disko = {
+    disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, sops-nix, ... }: {
+  outputs = { self, nixpkgs, sops-nix, disko, ... }: {
     nixosConfigurations = {
       the-box = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
