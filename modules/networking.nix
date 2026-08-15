@@ -26,7 +26,7 @@
 
       addresses = [
         {
-          Address = "fd69:dead:beef:1::10/64";
+          Address = "fd69:dead:beef:2::10/64";
         }
       ];
     };
