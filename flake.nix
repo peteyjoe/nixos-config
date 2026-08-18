@@ -32,6 +32,7 @@
         modules = [
           ./hosts/casa-vps
           disko.nixosModules.disko
+          sops-nix.nixosModules.sops
         ];
       };
     };
