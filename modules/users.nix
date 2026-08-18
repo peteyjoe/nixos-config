@@ -14,4 +14,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMGyqWdX6HLecqAzpzwX/waCMN/4nIkfKCiEreSJucsC peteyjoe@the-box"
     ];
   };
+
+  nix.settings.trusted-users = [ "root" "peteyjoe" ];
 }
