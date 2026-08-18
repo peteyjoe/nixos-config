@@ -1,0 +1,17 @@
+Non-declarative configurations
+
+DISK PARTITIONING
+I use disko to declaratively partition most disks, but the-box uses BTRFS RAID, which is not yet supported by disko. I will document this later.
+
+SOPS-NIX
+
+Each NixOS server has an age keypair. The public key is stored in the NixOS configuration, and the private key is stored at /var/lib/sops-nix/key.txt (as per the config).
+These keys were generated with age-keygen, and the sops-nix folder is owned by root:root with 700 permissions, and the key.txt file is owned by root:root with 600 permissions. The private key is used to decrypt secrets in the NixOS configuration, and the public key is used to encrypt secrets.
+I also have a personal age keypair on my desktop stored at ~/.config/sops/age/keys.txt, which is used to encrypt secrets for all servers.
+To edit secrets, I use the sops command (i.e. sops secrets/the-box.yaml) on my desktop, which uses my personal age keypair to decrypt the secrets. I then commit the changes to git, and the secrets are automatically re-encrypted with the server's public key when the NixOS configuration is built. the SOPS_AGE_KEY_FILE may need to be set when running the command, but I've had no issues so far.
+KEY ENROLLMENT PROCESS FOR NEW SERVERS
+1. Generate a new age keypair on the new server with age-keygen (sudo age-keygen -o /var/lib/sops-nix/key.txt).
+2. Copy the public key from the new server and add it to the .sops.yaml file (get pubkey with sudo age-keygen -y /var/lib/sops-nix/key.txt).
+3. Create a new path-regex entry in the .sops.yaml file for the new server's secrets file (e.g. secrets/new-server.yaml).
+4. Initialize the new server's secrets file with sops (e.g. sops secrets/new-server.yaml).
+5. Commit the changes to git and push them to the repository, and rebuild the NixOS configuration.
