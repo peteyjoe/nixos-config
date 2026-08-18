@@ -4,9 +4,9 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./networking.nix
 
       ../../modules/base.nix
-      ../../modules/networking.nix
       ../../modules/sops.nix
       ../../modules/storage.nix
       ../../modules/users.nix

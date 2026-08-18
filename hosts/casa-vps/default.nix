@@ -8,6 +8,8 @@
 
     ../../modules/base.nix
     ../../modules/users.nix
+    ../../modules/sops.nix
+
     ../../modules/services/ssh.nix
   ];
 
