@@ -14,3 +14,9 @@ creation_rules:
       - age:
           - *admin
           - *casa-vps
+  - path_regex: secrets/shared\.yaml$
+    key_groups:
+      - age:
+          - *admin
+          - *the-box
+          - *casa-vps
