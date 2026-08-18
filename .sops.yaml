@@ -1,8 +1,16 @@
 keys:
+   - &admin age1hf83vfz8rc49r34v7n88wmem9dy843n5ds54jhu48h8prultdggsvuqlez
    - &the-box age1agdz5qn0cs7d52xshvxg3228scc6zdx2488j2fzuq6wr647zfsuqw2gujm
+   - &casa-vps age13s3wm6qg2d8q5r0wtnmtyglax8yesg3yhx6869zuaj4aweyyle2qp88ghx
 
 creation_rules:
   - path_regex: secrets/the-box\.yaml$
     key_groups:
       - age:
+          - *admin
           - *the-box
+  - path_regex: secrets/casa-vps\.yaml$
+    key_groups:
+      - age:
+          - *admin
+          - *casa-vps
