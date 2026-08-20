@@ -18,8 +18,12 @@
 
   users.users.peteyjoe = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" ];
-  }
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+    ];
+  };
 
   programs.wayfire = {
     enable = true;
@@ -33,18 +37,19 @@
 
   services.greetd = {
     enable = true;
+    useTextGreeter = true;
 
     settings.default_session = {
-      command = ''
-        ${pkgs.greetd.tuigreet}/bin/tuigreet \
-          --time \
-          --remember \
-          --remember-user-session
-      '';
+      command =
+        "${pkgs.tuigreet}/bin/tuigreet"
+        + " --time"
+        + " --remember"
+        + " --remember-user-session"
+        + " --sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions";
 
       user = "greeter";
     };
-  }
+  };
 
   security.rtkit.enable = true;
 
@@ -54,10 +59,10 @@
     alsa = {
       enable = true;
       support32Bit = true;
-    }
+    };
 
     pulse.enable = true;
-  }
+  };
 
   environment.systemPackages = with pkgs; [
     git

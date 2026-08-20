@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  imports = [];
+  imports = [
+    ./ghostty.nix
+    ./wayfire.nix
+  ];
 
   home.username = "peteyjoe";
   home.homeDirectory = "/home/peteyjoe";
