@@ -70,6 +70,7 @@
     htop
     curl
     wget
+    fastfetch
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
