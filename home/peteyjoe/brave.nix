@@ -7,7 +7,7 @@
     commandLineArgs = [
       "--enable-unsafe-webgpu"
       "--use-webgpu-adapter=opengles"
-      "--use-webgpu-power-preference=force-high-performance"
+      "--force-webgpu-compat"
     ];
 
     extensions = [
