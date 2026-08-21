@@ -7,15 +7,6 @@
     ./networking.nix
   ];
 
-  boot = {
-    initrd.systemd.enable = true;
-
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-  };
-
   users.users.peteyjoe = {
     isNormalUser = true;
     extraGroups = [
@@ -72,7 +63,10 @@
     fastfetch
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   system.stateVersion = "26.05";
 
