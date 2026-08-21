@@ -4,6 +4,7 @@
   imports = [
     ./brave.nix
     ./ghostty.nix
+    ./theme.nix
     ./wayfire.nix
   ];
 
