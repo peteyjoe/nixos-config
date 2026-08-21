@@ -5,6 +5,7 @@
     enable = true;
 
     commandLineArgs = [
+      "--enable-unsafe-webgpu"
       "--enable-features=Vulkan"
     ];
 
