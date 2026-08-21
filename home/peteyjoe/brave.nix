@@ -14,10 +14,14 @@
 
     commandLineArgs = [
       "--enable-unsafe-webgpu"
+      "--use-gl=angle"
+      "--use-angle=vulkan"
+      "--enable-features=AcceleratedVideoEncoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
+
       #"--use-webgpu-adapter=vulkan"
       #"--disable-software-rasterizer"
-      "--enable-features=Vulkan"
-      "--use-angle=vulkan"
+      #"--enable-features=Vulkan"
+      #"--use-angle=vulkan"
     ];
 
     extensions = [
