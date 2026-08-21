@@ -1,13 +1,20 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.brave-origin = {
     enable = true;
 
+    package = pkgs.brave-origin.override {
+      # Make NixOS's Vulkan driver environment visible to Brave.
+      vulkanSupport = true;
+
+      # Don't force the whole browser/compositor onto Vulkan yet.
+      enableVulkan = false;
+    };
+
     commandLineArgs = [
       "--enable-unsafe-webgpu"
-      "--use-webgpu-adapter=opengles"
-      "--force-webgpu-compat"
+      "--use-webgpu-adapter=vulkan"
     ];
 
     extensions = [
