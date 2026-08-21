@@ -8,6 +8,7 @@
 
     ../../modules/shared/base.nix
     ../../modules/shared/desktop-packages.nix
+    ../../modules/shared/steam.nix
   ];
 
   users.users.peteyjoe = {
