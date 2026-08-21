@@ -4,6 +4,8 @@
   imports = [
     ./brave.nix
     ./ghostty.nix
+    ./git.nix
+    ./ssh.nix
     ./theme.nix
     ./wayfire.nix
   ];
