@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   nix.settings.experimental-features = [
@@ -23,17 +23,4 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
-  environment.systemPackages = with pkgs; [
-    vim
-    btrfs-progs
-    smartmontools
-    parted
-    git
-    sops
-    age
-    htop
-    bandwhich
-    fastfetch
-  ];
 }

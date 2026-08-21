@@ -6,7 +6,8 @@
     ./networking.nix
     ./hardware-configuration.nix
 
-    ../../modules/base.nix
+    ../../modules/shared/base.nix
+    ../../modules/shared/server-packages.nix
     ../../modules/users.nix
     ../../modules/sops.nix
 

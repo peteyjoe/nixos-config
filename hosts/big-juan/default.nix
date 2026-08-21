@@ -5,6 +5,9 @@
     ./disko.nix
     ./hardware-configuration.nix
     ./networking.nix
+
+    ../../modules/shared/base.nix
+    ../../modules/shared/desktop-packages.nix
   ];
 
   users.users.peteyjoe = {
@@ -54,19 +57,6 @@
 
     pulse.enable = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    vim
-    htop
-    curl
-    wget
-    fastfetch
-  ];
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   system.stateVersion = "26.05";
 
