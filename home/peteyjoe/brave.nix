@@ -6,7 +6,6 @@
 
     commandLineArgs = [
       "--enable-unsafe-webgpu"
-      "--enable-features=Vulkan"
     ];
 
     extensions = [
