@@ -13,6 +13,7 @@
     };
 
     commandLineArgs = [
+      "--ozone-platform=x11"
       "--enable-unsafe-webgpu"
       "--use-gl=angle"
       "--use-angle=vulkan"
