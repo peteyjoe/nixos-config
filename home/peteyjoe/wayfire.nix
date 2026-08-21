@@ -11,34 +11,34 @@
 
     settings = {
       core = {
-        plugins = ''
-          alpha
-          animate
-          command
-          cube
-          decoration
-          expo
-          fast-switcher
-          fisheye
-          foreign-toplevel
-          grid
-          gtk-shell
-          idle
-          invert
-          move
-          oswitch
-          place
-          resize
-          session-lock
-          shortcuts-inhibit
-          switcher
-          vswitch
-          window-rules
-          wm-actions
-          wobbly
-          wrot
-          zoom
-        '';
+        plugins = builtins.concatStringsSep " " [
+          "alpha"
+          "animate"
+          "command"
+          "cube"
+          "decoration"
+          "expo"
+          "fast-switcher"
+          "fisheye"
+          "foreign-toplevel"
+          "grid"
+          "gtk-shell"
+          "idle"
+          "invert"
+          "move"
+          "oswitch"
+          "place"
+          "resize"
+          "session-lock"
+          "shortcuts-inhibit"
+          "switcher"
+          "vswitch"
+          "window-rules"
+          "wm-actions"
+          "wobbly"
+          "wrot"
+          "zoom"
+        ];
 
         close_top_view = "<super> KEY_Q | <alt> KEY_F4";
 
@@ -48,10 +48,10 @@
 
       command = {
         binding_terminal = "<super> KEY_ENTER";
-        command_terminal = "ghostty";
+        command_terminal = "${pkgs.ghostty}/bin/ghostty";
 
         binding_launcher = "<super> KEY_D";
-        command_launcher = "fuzzel";
+        command_launcher = "${pkgs.fuzzel}/bin/fuzzel";
       };
 
       move.activate = "<super> BTN_LEFT";
