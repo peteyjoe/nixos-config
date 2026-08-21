@@ -14,7 +14,8 @@
 
     commandLineArgs = [
       "--enable-unsafe-webgpu"
-      "--use-webgpu-adapter=vulkan"
+      "--enable-features=Vulkan"
+      "--use-angle=vulkan"
     ];
 
     extensions = [
