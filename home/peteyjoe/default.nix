@@ -8,6 +8,7 @@
     ./ssh.nix
     ./theme.nix
     ./wayfire.nix
+    ./zed.nix
   ];
 
   home.username = "peteyjoe";
