@@ -12,6 +12,7 @@
     extraPackages = with pkgs; [
       nixd
       nixfmt
+      nil
     ];
 
     extensions = [
@@ -43,4 +44,3 @@
     };
   };
 }
-
