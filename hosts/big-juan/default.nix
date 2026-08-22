@@ -61,6 +61,17 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  powerManagement.cpuFreqGovernor = "performance";
+
+  services.power-profiles-daemon.enable = true;
+  services.tlp.enable = false;
+  services.auto-cpufreq.enable = false;
+
+  boot.kernelParams = [
+    "pcie_aspm.policy=performance"
+    "usbcore.autosuspend=-1"
+  ];
+
   system.stateVersion = "26.05";
 
 }
