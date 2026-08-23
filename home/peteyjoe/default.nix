@@ -35,4 +35,5 @@
   ];
 
   programs.git.enable = true;
+  programs.onlyoffice.enable = true;
 }
