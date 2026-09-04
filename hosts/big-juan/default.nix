@@ -11,7 +11,7 @@
     ../../modules/shared/steam.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs-unstable.config.allowUnfree = true;
 
   users.users.peteyjoe = {
     isNormalUser = true;
