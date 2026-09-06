@@ -17,8 +17,11 @@
       "wheel"
       "networkmanager"
       "video"
+      "vboxusers"
     ];
   };
+
+  virtualisation.virtualbox.host.enable = true;
 
   programs.wayfire = {
     enable = true;
