@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  networking.hostName = "the-box";
+
   networking.networkmanager.enable = false;
 
   networking.useNetworkd = true;

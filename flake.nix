@@ -27,53 +27,71 @@
     };
   };
 
-  outputs = inputs@{
-    self,
-    nixpkgs,
-    nixpkgs-unstable,
-    home-manager,
-    home-manager-unstable,
-    sops-nix,
-    disko,
-    ...
-  }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      home-manager-unstable,
+      sops-nix,
+      disko,
+      ...
+    }:
 
-  let
-    mkSystem = nixpkgsInput: modules:
-      nixpkgsInput.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        inherit modules;
+    let
+      mkSystem =
+        nixpkgsInput: modules:
+        nixpkgsInput.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          inherit modules;
+        };
+    in
+    {
+      nixosConfigurations = {
+        the-box = mkSystem nixpkgs [
+          ./hosts/the-box
+          sops-nix.nixosModules.sops
+        ];
+
+        casa-vps = mkSystem nixpkgs [
+          ./hosts/casa-vps
+          disko.nixosModules.disko
+          sops-nix.nixosModules.sops
+        ];
+
+        big-juan = mkSystem nixpkgs-unstable [
+          ./hosts/big-juan
+          disko.nixosModules.disko
+          home-manager-unstable.nixosModules.home-manager
+
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+
+              users.peteyjoe = import ./home/peteyjoe;
+            };
+          }
+        ];
+
+        santiago = mkSystem nixpkgs-unstable [
+          ./hosts/santiago
+          disko.nixosModules.disko
+          home-manager-unstable.nixosModules.home-manager
+
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+
+              users.peteyjoe = import ./home/peteyjoe;
+            };
+          }
+        ];
       };
-  in
-  {
-    nixosConfigurations = {
-      the-box = mkSystem nixpkgs [
-        ./hosts/the-box
-        sops-nix.nixosModules.sops
-      ];
-
-      casa-vps = mkSystem nixpkgs [
-        ./hosts/casa-vps
-        disko.nixosModules.disko
-        sops-nix.nixosModules.sops
-      ];
-
-      big-juan = mkSystem nixpkgs-unstable [
-        ./hosts/big-juan
-        disko.nixosModules.disko
-        home-manager-unstable.nixosModules.home-manager
-
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = { inherit inputs; };
-
-            users.peteyjoe = import ./home/peteyjoe;
-          };
-        }
-      ];
     };
-  };
 }

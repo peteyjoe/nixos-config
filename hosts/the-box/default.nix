@@ -24,8 +24,5 @@
     ../../modules/services/wireguard.nix
   ];
 
-  networking.hostName = "the-box";
-
   system.stateVersion = "26.05";
-
 }
