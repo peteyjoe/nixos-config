@@ -25,8 +25,6 @@ in
               type = "luks";
               name = "cryptsystem";
 
-              passwordFile = "/tmp/disko-password";
-
               extraFormatArgs = [
                 "--type"
                 "luks2"
@@ -78,6 +76,11 @@ in
             subvolumes = {
               "/root" = {
                 mountpoint = "/";
+                mountOptions = btrfsMountOptions;
+              };
+
+              "/boot" = {
+                mountpoint = "/boot";
                 mountOptions = btrfsMountOptions;
               };
 
