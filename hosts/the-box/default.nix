@@ -15,9 +15,9 @@
     ../../modules/services/ddns-updater.nix
     ../../modules/services/glances.nix
     ../../modules/services/homepage.nix
-    ../../modules/services/i2pd.nix
+    #../../modules/services/i2pd.nix
     ../../modules/services/microbin.nix
-    ../../modules/services/monero.nix
+    #../../modules/services/monero.nix
     ../../modules/services/ssh.nix
     ../../modules/services/samba.nix
     ../../modules/services/vaultwarden.nix
