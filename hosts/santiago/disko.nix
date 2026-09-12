@@ -12,7 +12,7 @@ in
     disk.main = {
       type = "disk";
 
-      device = "/dev/disk/by-id/INSERT_SSD_HERE";
+      device = "/dev/disk/by-id/ata-T-FORCE_T253TY002T_TPBF2501170070100665";
 
       content = {
         type = "gpt";
