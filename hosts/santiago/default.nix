@@ -31,6 +31,12 @@
         # GRUB itself is Libreboot's flash-resident GRUB.
         device = "nodev";
 
+        font = null;
+        splashImage = null;
+        theme = null;
+
+        copyKernels = true;
+
         enableCryptodisk = true;
         configurationLimit = 10;
 

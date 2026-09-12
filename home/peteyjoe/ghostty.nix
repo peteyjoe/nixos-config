@@ -7,6 +7,7 @@
     settings = {
       font-size = 14;
       confirm-close-surface = false;
+      shell-integration-features = "ssh-env,ssh-terminfo";
     };
   };
 }
