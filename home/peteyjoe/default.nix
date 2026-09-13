@@ -32,6 +32,8 @@
     ripgrep
     fd
     jq
+    wineWowPackages.stable
+    winetricks
   ];
 
   programs.git.enable = true;
