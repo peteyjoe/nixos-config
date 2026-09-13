@@ -32,7 +32,7 @@
     ripgrep
     fd
     jq
-    wineWowPackages.stable
+    wineWow64Packages.stagingFull
     winetricks
   ];
 
