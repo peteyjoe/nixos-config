@@ -56,5 +56,16 @@
     '';
   };
 
+  home-manager.users.peteyjoe = {
+    wayland.windowManager.wayfire.settings = {
+      "output:eDP-1" = {
+        mode = "1920x1080@60020";
+        position = "0,0";
+        transform = "normal";
+        scale = 1.0;
+      };
+    };
+  };
+
   system.stateVersion = "26.05";
 }
