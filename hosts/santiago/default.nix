@@ -49,6 +49,8 @@
 
     kernelModules = [ "thinkpad_acpi" ];
 
+    kernelParams = [ "i915.enable_psr=0" ];
+
     extraModprobeConfig = ''
       options thinkpad_acpi force_load=1 fan_control=1
     '';
