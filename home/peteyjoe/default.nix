@@ -24,6 +24,7 @@
     wl-clipboard
     grim
     slurp
+    sway-contrib.grimshot
     pavucontrol
     playerctl
     brightnessctl
