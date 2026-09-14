@@ -38,4 +38,9 @@
 
   programs.git.enable = true;
   programs.onlyoffice.enable = true;
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 }
