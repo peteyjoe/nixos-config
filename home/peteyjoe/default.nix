@@ -38,6 +38,7 @@
 
   programs.git.enable = true;
   programs.onlyoffice.enable = true;
+  programs.bash.enable = true;
 
   programs.direnv = {
     enable = true;
