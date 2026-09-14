@@ -46,6 +46,12 @@
         '';
       };
     };
+
+    kernelModules = [ "thinkpad_acpi" ];
+
+    extraModprobeConfig = ''
+      options thinkpad_acpi force_load=1 fan_control=1
+    '';
   };
 
   system.stateVersion = "26.05";
