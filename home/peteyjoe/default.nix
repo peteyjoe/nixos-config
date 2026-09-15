@@ -36,7 +36,7 @@
     wineWow64Packages.stagingFull
     winetricks
     texstudio
-    texlive.combined.scheme-full
+    texliveFull
   ];
 
   programs.git.enable = true;
