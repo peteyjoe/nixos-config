@@ -37,7 +37,6 @@
     winetricks
     texstudio
     texliveFull
-    hugo
   ];
 
   programs.git.enable = true;
