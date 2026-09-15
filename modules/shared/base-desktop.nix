@@ -52,5 +52,7 @@
     pulse.enable = true;
   };
 
+  xdg.icons.enable = true;
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 }
