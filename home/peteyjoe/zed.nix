@@ -41,6 +41,12 @@
       edit_predictions = {
         provider = "none";
       };
+
+      agent_servers = {
+        codex-acp = {
+          type = "registry";
+        };
+      };
     };
   };
 }
