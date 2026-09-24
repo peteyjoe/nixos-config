@@ -13,10 +13,12 @@
       nixd
       nixfmt
       nil
+      jdk21
     ];
 
     extensions = [
       "nix"
+      "java"
     ];
 
     userSettings = {
