@@ -22,6 +22,7 @@
       "java"
       "html"
       "toml"
+      "git-firefly"
       "catppuccin"
       "catppuccin-icons"
     ];
