@@ -14,18 +14,29 @@
       nixfmt
       nil
       jdk21
+      ruby
     ];
 
     extensions = [
       "nix"
       "java"
+      "html"
+      "toml"
+      "catppuccin"
+      "catppuccin-icons"
     ];
 
     userSettings = {
       theme = {
-        mode = "system";
-        light = "One Light";
-        dark = "One Dark";
+        mode = "dark";
+        dark = "Catppuccin Mocha";
+        light = "Catppuccin Latte";
+      };
+
+      icon_theme = {
+        mode = "dark";
+        dark = "Catppuccin Mocha";
+        light = "Catppuccin Latte";
       };
 
       ui_font_size = 16;
