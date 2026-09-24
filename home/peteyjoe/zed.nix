@@ -14,7 +14,8 @@
       nixfmt
       nil
       jdk21
-      ruby
+      ruby_3_4
+      rubyPackages_3_4.solargraph
     ];
 
     extensions = [
