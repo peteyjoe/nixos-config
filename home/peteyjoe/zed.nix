@@ -22,6 +22,8 @@
       "java"
       "html"
       "toml"
+      "ruby"
+      "dockerfile"
       "git-firefly"
       "catppuccin"
       "catppuccin-icons"
