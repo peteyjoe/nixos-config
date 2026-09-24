@@ -26,6 +26,7 @@
       "ruby"
       "dockerfile"
       "git-firefly"
+      "pug"
       "catppuccin"
       "catppuccin-icons"
     ];
