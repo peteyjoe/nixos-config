@@ -5,6 +5,7 @@
     ./brave.nix
     ./ghostty.nix
     ./git.nix
+    ./librewolf.nix
     ./ssh.nix
     ./theme.nix
     ./wayfire.nix
