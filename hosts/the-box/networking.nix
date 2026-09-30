@@ -22,15 +22,15 @@
         IPv6AcceptRA = true;
       };
 
-      ipv6AcceptRAConfig = {
-        Token = "::1108";
-      };
+      # ipv6AcceptRAConfig = {
+      #   Token = "::1108";
+      # };
 
-      addresses = [
-        {
-          Address = "fd69:dead:beef:2::10/64";
-        }
-      ];
+      # addresses = [
+      #   {
+      #     Address = "fd69:dead:beef:2::10/64";
+      #   }
+      # ];
     };
   };
 }
