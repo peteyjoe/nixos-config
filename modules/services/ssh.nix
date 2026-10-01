@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  environment.enableAllTerminfo = true;
+
   services.openssh = {
     enable = true;
     openFirewall = true;
