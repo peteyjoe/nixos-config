@@ -63,6 +63,10 @@
       address = [
         "10.69.69.1/24"
       ];
+
+      networkConfig = {
+        IPMasquerade = "ipv4";
+      };
     };
   };
 
