@@ -6,6 +6,8 @@
     ./ghostty.nix
     ./git.nix
     ./librewolf.nix
+    ./mime.nix
+    ./mpv.nix
     ./ssh.nix
     ./theme.nix
     ./wayfire.nix
@@ -58,6 +60,9 @@
     lzop
     lrzip
     cpio
+
+    # Image viewer
+    imv
   ];
 
   programs.git.enable = true;
