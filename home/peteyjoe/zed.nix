@@ -16,6 +16,8 @@
       jdk21
       ruby_3_4
       rubyPackages_3_4.solargraph
+      ruff
+      basedpyright
     ];
 
     extensions = [
@@ -63,6 +65,22 @@
       agent_servers = {
         codex-acp = {
           type = "registry";
+        };
+      };
+
+      lsp = {
+        ruff = {
+          binary = {
+            path = "${pkgs.ruff}/bin/ruff";
+            arguments = [ "server" ];
+          };
+        };
+
+        basedpyright = {
+          binary = {
+            path = "${pkgs.basedpyright}/bin/basedpyright-langserver";
+            arguments = [ "--stdio" ];
+          };
         };
       };
     };
