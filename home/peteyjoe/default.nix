@@ -39,7 +39,7 @@
     texliveFull
 
     # Polkit agent
-    mate.mate-polkit
+    mate-polkit
 
     # Archive manager
     engrampa
