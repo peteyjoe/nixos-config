@@ -10,6 +10,10 @@
     xwayland.enable = true;
 
     settings = {
+      autostart = {
+        polkit = "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1";
+      };
+
       core = {
         plugins = builtins.concatStringsSep " " [
           "alpha"

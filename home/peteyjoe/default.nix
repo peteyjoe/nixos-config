@@ -30,7 +30,6 @@
     playerctl
     brightnessctl
     networkmanagerapplet
-    thunar
     ripgrep
     fd
     jq
@@ -38,6 +37,27 @@
     winetricks
     texstudio
     texliveFull
+
+    # Polkit agent
+    mate.mate-polkit
+
+    # Archive manager
+    engrampa
+
+    # Archive format support
+    _7zz
+    unrar
+    zip
+    unzip
+    gzip
+    bzip2
+    xz
+    zstd
+    brotli
+    lzip
+    lzop
+    lrzip
+    cpio
   ];
 
   programs.git.enable = true;

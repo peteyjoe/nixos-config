@@ -55,4 +55,17 @@
   xdg.icons.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  programs.thunar = {
+    enable = true;
+
+    plugins = with pkgs; [
+      thunar-volman
+      thunar-archive-plugin
+    ];
+  };
+
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
 }
