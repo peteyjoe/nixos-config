@@ -11,7 +11,7 @@
 
     settings = {
       autostart = {
-        polkit = "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1";
+        polkit = "${pkgs.mate-polkit}/libexec/polkit-mate-authentication-agent-1";
       };
 
       core = {
