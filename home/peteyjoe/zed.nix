@@ -53,6 +53,8 @@
 
       semantic_tokens = "combined";
 
+      load_direnv = "direct";
+
       telemetry = {
         diagnostics = false;
         metrics = false;
@@ -65,22 +67,6 @@
       agent_servers = {
         codex-acp = {
           type = "registry";
-        };
-      };
-
-      lsp = {
-        ruff = {
-          binary = {
-            path = "${pkgs.ruff}/bin/ruff";
-            arguments = [ "server" ];
-          };
-        };
-
-        basedpyright = {
-          binary = {
-            path = "${pkgs.basedpyright}/bin/basedpyright-langserver";
-            arguments = [ "--stdio" ];
-          };
         };
       };
     };
