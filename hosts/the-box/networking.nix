@@ -26,11 +26,9 @@
       #   Token = "::1108";
       # };
 
-      # addresses = [
-      #   {
-      #     Address = "fd69:dead:beef:2::10/64";
-      #   }
-      # ];
+      address = [
+        "fd69:dead:beef:2::10/64"
+      ];
     };
   };
 }
