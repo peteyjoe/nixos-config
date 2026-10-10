@@ -73,6 +73,14 @@ in
         ports = [
           "127.0.0.1:${toString webUiPort}:${toString webUiPort}/tcp"
         ];
+
+        extraOptions = [
+          "--health-cmd=/gluetun-entrypoint healthcheck"
+          "--health-interval=5s"
+          "--health-timeout=5s"
+          "--health-start-period=10s"
+          "--health-retries=3"
+        ];
       };
 
       qbittorrent = {
