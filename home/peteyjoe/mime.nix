@@ -20,14 +20,14 @@
       "audio/x-wav" = [ "mpv.desktop" ];
 
       # Images
-      "image/jpeg" = [ "imv.desktop" ];
-      "image/png" = [ "imv.desktop" ];
-      "image/gif" = [ "imv.desktop" ];
-      "image/webp" = [ "imv.desktop" ];
-      "image/svg+xml" = [ "imv.desktop" ];
-      "image/tiff" = [ "imv.desktop" ];
-      "image/avif" = [ "imv.desktop" ];
-      "image/heif" = [ "imv.desktop" ];
+      "image/jpeg" = [ "ristretto.desktop" ];
+      "image/png" = [ "ristretto.desktop" ];
+      "image/gif" = [ "ristretto.desktop" ];
+      "image/webp" = [ "ristretto.desktop" ];
+      "image/svg+xml" = [ "ristretto.desktop" ];
+      "image/tiff" = [ "ristretto.desktop" ];
+      "image/avif" = [ "ristretto.desktop" ];
+      "image/heif" = [ "ristretto.desktop" ];
     };
   };
 }
