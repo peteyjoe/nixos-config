@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 let
+  localOnlyProxy = import ../lib/caddy-local-only.nix;
+
   torrentPort = 11080;
   webUiPort = 8090;
 
@@ -121,7 +123,7 @@ in
     unitConfig.RequiresMountsFor = "${configDir} ${filesDir}";
   };
 
-  services.caddy.virtualHosts."qbittorrent.thisismy.casa".extraConfig = ''
-    reverse_proxy 127.0.0.1:${toString webUiPort}
-  '';
+  services.caddy.virtualHosts."qbittorrent.thisismy.casa".extraConfig = localOnlyProxy {
+    upstream = "127.0.0.1:${toString webUiPort}";
+  };
 }
