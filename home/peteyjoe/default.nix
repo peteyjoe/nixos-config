@@ -62,7 +62,11 @@
     cpio
 
     # Image viewer
+    ristretto
     imv
+
+    # Simple editor
+    mousepad
   ];
 
   programs.git.enable = true;
