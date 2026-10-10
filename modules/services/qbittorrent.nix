@@ -64,7 +64,7 @@ in
           # Permit access to qBittorrent's Web UI.
           FIREWALL_INPUT_PORTS = toString webUiPort;
 
-          SERVER_CITIES = "Phoenix";
+          SERVER_CITIES = "Phoenix Arizona";
         };
 
         environmentFiles = [
