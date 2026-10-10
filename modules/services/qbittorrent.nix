@@ -18,13 +18,13 @@ in
 {
   boot.kernelModules = [ "tun" ];
 
-  sops.secrets.airvpn_private_key = {
+  sops.secrets.the-box-airvpn-private-key = {
     sopsFile = ../../secrets/the-box.yaml;
     owner = "root";
     group = "systemd-network";
     mode = "0440";
   };
-  sops.secrets.airvpn_preshared_key = {
+  sops.secrets.the-box-airvpn-psk = {
     sopsFile = ../../secrets/the-box.yaml;
     owner = "root";
     group = "systemd-network";
@@ -32,8 +32,8 @@ in
   };
 
   sops.templates."airvpn-gluetun.env".content = ''
-    WIREGUARD_PRIVATE_KEY=${config.sops.placeholder.airvpn_private_key}
-    WIREGUARD_PRESHARED_KEY=${config.sops.placeholder.airvpn_preshared_key}
+    WIREGUARD_PRIVATE_KEY=${config.sops.placeholder.the-box-airvpn-private-key}
+    WIREGUARD_PRESHARED_KEY=${config.sops.placeholder.the-box-airvpn-psk}
   '';
 
   virtualisation.oci-containers = {
@@ -105,11 +105,13 @@ in
   };
 
   # Propagate explicit VPN unit restarts/stops to qBittorrent.
-  systemd.services.podman-qbittorrent.partOf = [
-    "podman-gluetun.service"
-  ];
+  systemd.services.podman-qbittorrent = {
+    partOf = [ "podman-gluetun.service" ];
 
-  config.services.caddy.virtualHosts."qbittorrent.thisismy.casa".extraConfig = ''
-    reverse_proxy 127.0.0.1:${webUiPort}
+    unitConfig.RequiresMountsFor = "${configDir} ${filesDir}";
+  };
+
+  services.caddy.virtualHosts."qbittorrent.thisismy.casa".extraConfig = ''
+    reverse_proxy 127.0.0.1:${toString webUiPort}
   '';
 }
