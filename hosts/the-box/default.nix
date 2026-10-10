@@ -18,6 +18,7 @@
     #../../modules/services/i2pd.nix
     ../../modules/services/microbin.nix
     #../../modules/services/monero.nix
+    ../../modules/services/qbittorrent.nix
     ../../modules/services/ssh.nix
     ../../modules/services/samba.nix
     ../../modules/services/vaultwarden.nix
