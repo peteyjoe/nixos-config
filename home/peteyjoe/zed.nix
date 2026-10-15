@@ -50,6 +50,7 @@
       buffer_font_size = 15;
 
       format_on_save = "on";
+      preferred_line_length = 150;
 
       semantic_tokens = "combined";
 
