@@ -30,4 +30,7 @@
       "image/heif" = [ "org.xfce.ristretto.desktop" ];
     };
   };
+
+  xdg.configFile."mimeapps.list".force = true;
+  xdg.dataFile."applications/mimeapps.list".force = true;
 }
