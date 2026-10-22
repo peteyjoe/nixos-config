@@ -7,7 +7,6 @@
       "wheel"
       "networkmanager"
       "video"
-      "plugdev"
       "kvm"
       "vboxusers"
     ];
