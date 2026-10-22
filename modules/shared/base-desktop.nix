@@ -7,6 +7,7 @@
       "wheel"
       "networkmanager"
       "video"
+      "kvm"
       "vboxusers"
     ];
   };
