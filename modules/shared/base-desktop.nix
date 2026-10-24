@@ -55,7 +55,15 @@
 
   xdg.icons.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest.extend (final: prev: {
+    # VirtualBox disables module signing and omits Nixpkgs' signing flags.
+    # Restore both so the module aggregator gets the required .ko.cer files.
+    virtualbox = prev.virtualbox.overrideAttrs (old: {
+      makeFlags = (old.makeFlags or [ ]) ++ final.kernelModuleMakeFlags ++ [
+        "VBOX_ALLOW_MODULE_SIGNING=1"
+      ];
+    });
+  });
 
   programs.thunar = {
     enable = true;
