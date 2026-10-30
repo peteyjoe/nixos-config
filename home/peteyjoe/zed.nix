@@ -18,10 +18,12 @@
       rubyPackages_3_4.solargraph
       ruff
       basedpyright
+      haskell-language-server
     ];
 
     extensions = [
       "nix"
+      "haskell"
       "java"
       "html"
       "toml"
