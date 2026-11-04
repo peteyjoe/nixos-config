@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
+  programs.codex.enable = true;
+
   programs.zed-editor = {
     enable = true;
 
@@ -68,8 +70,9 @@
       };
 
       agent_servers = {
-        codex-acp = {
-          type = "registry";
+        "Codex (Nix)" = {
+          type = "custom";
+          command = lib.getExe pkgs.codex-acp;
         };
       };
     };
