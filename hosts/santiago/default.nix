@@ -14,7 +14,6 @@
 
   boot = {
     initrd = {
-      systemd.enable = true;
       secrets."/etc/keys/root.key" = null;
 
       luks.devices.cryptsystem = {
