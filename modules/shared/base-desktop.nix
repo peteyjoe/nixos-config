@@ -9,6 +9,10 @@
       "video"
       "kvm"
       "vboxusers"
+
+      # USB Serial Stuff
+      "plugdev"
+      "dialout"
     ];
   };
 
@@ -55,15 +59,20 @@
 
   xdg.icons.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest.extend (final: prev: {
-    # VirtualBox disables module signing and omits Nixpkgs' signing flags.
-    # Restore both so the module aggregator gets the required .ko.cer files.
-    virtualbox = prev.virtualbox.overrideAttrs (old: {
-      makeFlags = (old.makeFlags or [ ]) ++ final.kernelModuleMakeFlags ++ [
-        "VBOX_ALLOW_MODULE_SIGNING=1"
-      ];
-    });
-  });
+  boot.kernelPackages = pkgs.linuxPackages_latest.extend (
+    final: prev: {
+      # VirtualBox disables module signing and omits Nixpkgs' signing flags.
+      # Restore both so the module aggregator gets the required .ko.cer files.
+      virtualbox = prev.virtualbox.overrideAttrs (old: {
+        makeFlags =
+          (old.makeFlags or [ ])
+          ++ final.kernelModuleMakeFlags
+          ++ [
+            "VBOX_ALLOW_MODULE_SIGNING=1"
+          ];
+      });
+    }
+  );
 
   programs.thunar = {
     enable = true;
@@ -77,4 +86,11 @@
   services.udisks2.enable = true;
   services.gvfs.enable = true;
   services.tumbler.enable = true;
+
+  services.udev.packages = with pkgs; [
+    picotool
+    probe-rs-tools
+    openocd-rp2040
+  ];
+  users.groups.plugdev = { };
 }
