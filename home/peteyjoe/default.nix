@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -22,6 +27,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    claude-code
     fuzzel
     mako
     wl-clipboard
@@ -72,6 +78,17 @@
   programs.git.enable = true;
   programs.onlyoffice.enable = true;
   programs.bash.enable = true;
+
+  programs.pi-coding-agent = {
+    enable = true;
+    extraPackages = [ pkgs.nodejs ];
+    mutableSettings = true;
+    settings.packages = [ "npm:pi-claude-bridge@0.13.0" ];
+  };
+
+  home.file."${config.programs.pi-coding-agent.configDir}/claude-bridge.json".text = builtins.toJSON {
+    provider.pathToClaudeCodeExecutable = lib.getExe pkgs.claude-code;
+  };
 
   programs.direnv = {
     enable = true;

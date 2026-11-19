@@ -21,6 +21,8 @@
       ruff
       basedpyright
       haskell-language-server
+      nodejs
+      pi-coding-agent
     ];
 
     extensions = [
@@ -70,9 +72,16 @@
       };
 
       agent_servers = {
+        pi-acp.type = "registry";
+
         "Codex (Nix)" = {
           type = "custom";
           command = lib.getExe pkgs.codex-acp;
+        };
+
+        "Claude (Nix)" = {
+          type = "custom";
+          command = lib.getExe pkgs.claude-agent-acp;
         };
       };
     };
