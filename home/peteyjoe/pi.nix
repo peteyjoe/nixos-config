@@ -40,6 +40,10 @@ in
       collapseChangelog = true;
       hideThinkingBlock = true;
       cacheWarming = "streaming";
+
+      defaultProvider = "openai";
+      defaultModel = "gpt-6.2-sol";
+      defaultThinkingLevel = "high";
     };
     # Global user instructions, written to ${pi.configDir}/AGENTS.md.
     context = ''
