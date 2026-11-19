@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -13,6 +8,7 @@
     ./librewolf.nix
     ./mime.nix
     ./mpv.nix
+    ./pi.nix
     ./ssh.nix
     ./theme.nix
     ./wayfire.nix
@@ -78,17 +74,6 @@
   programs.git.enable = true;
   programs.onlyoffice.enable = true;
   programs.bash.enable = true;
-
-  programs.pi-coding-agent = {
-    enable = true;
-    extraPackages = [ pkgs.nodejs ];
-    mutableSettings = true;
-    settings.packages = [ "npm:pi-claude-bridge@0.13.0" ];
-  };
-
-  home.file."${config.programs.pi-coding-agent.configDir}/claude-bridge.json".text = builtins.toJSON {
-    provider.pathToClaudeCodeExecutable = lib.getExe pkgs.claude-code;
-  };
 
   programs.direnv = {
     enable = true;
